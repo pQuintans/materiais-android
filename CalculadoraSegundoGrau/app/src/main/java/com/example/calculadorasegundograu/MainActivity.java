@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         double bValue = Double.parseDouble(b.getText().toString());
         double cValue = Double.parseDouble(c.getText().toString());
 
-        equacao.setText(aValue + (bValue > 0 ? "x²+" : "x²") +  bValue + (cValue > 0 ? "x+" : "x") + cValue);
+        equacao.setText(aValue + (bValue > 0 ? "x²+" : "x²") +  bValue + (cValue > 0 ? "x+" : "x") + cValue + " = 0");
 
         double deltaValue = Math.pow(bValue, 2) - (4 * aValue * cValue);
 
