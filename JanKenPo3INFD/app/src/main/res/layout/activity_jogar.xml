@@ -8,10 +8,10 @@
     tools:context=".JogarActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
+        android:id="@+id/btnJogar"
         android:layout_width="343dp"
-        android:layout_height="148dp"
-        android:layout_marginTop="76dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/fundo2"
         android:text="Fazer Jogada!"
         android:textSize="34sp"
@@ -20,31 +20,107 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43">
+        app:layout_constraintTop_toBottomOf="@+id/btnJogar">
 
         <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
+            android:id="@+id/rbPedra"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/pedra" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
+            android:id="@+id/rbPapel"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/papel" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rbTesoura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/tesoura" />
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/ivCampo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/campo_batalha" />
+
+    <TextView
+        android:id="@+id/tvPartidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="180dp"
+        android:text="Partidas: 0"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/tvViorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Vitórias: 0"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartidas" />
+
+    <TextView
+        android:id="@+id/tvEmpates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Empates: 0"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvViorias" />
+
+    <TextView
+        android:id="@+id/tvDerrotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Derrotas: 0"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmpates" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNova"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/fundo2"
+        android:text="NOVA PARTIDA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDerrotas" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnInstrucoes"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/fundo2"
+        android:text="instruções"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDerrotas" />
 </androidx.constraintlayout.widget.ConstraintLayout>
