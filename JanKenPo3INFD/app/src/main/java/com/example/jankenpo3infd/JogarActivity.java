@@ -2,6 +2,7 @@ package com.example.jankenpo3infd;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -45,7 +46,6 @@ public class JogarActivity extends AppCompatActivity {
         int escolhaCPU, escolhaJogador;
         escolhaCPU = 0;
         escolhaJogador = 0;
-        contaPartidas++;
 
         if(rbPedra.isChecked()){
             escolhaJogador = 1;
@@ -58,39 +58,41 @@ public class JogarActivity extends AppCompatActivity {
                     "Escolha pedra, papel ou tesoura",
                     Toast.LENGTH_SHORT
                     ).show();
+            return;
         }
 
         if(escolhaJogador > 0){
+            contaPartidas++;
             Random rand = new Random();
             escolhaCPU = rand.nextInt(3) + 1;
 
             if(escolhaJogador == 1 && escolhaCPU==1){
                 contaEmpates++;
-                ivCampo.setImageResource((R.drawable.pedra_pedra));
+                ivCampo.setImageResource(R.drawable.pedra_pedra);
             } else if(escolhaJogador == 1 && escolhaCPU == 2){
                 contaDerrotas++;
-                ivCampo.setImageResource((R.drawable.pedra_papel));
+                ivCampo.setImageResource(R.drawable.pedra_papel);
             } else if(escolhaJogador == 1 && escolhaCPU == 3){
                 contaVitorias++;
-                ivCampo.setImageResource((R.drawable.pedra_tesoura));
+                ivCampo.setImageResource(R.drawable.pedra_tesoura);
             } else if(escolhaJogador == 2 && escolhaCPU== 1){
                 contaVitorias++;
-                ivCampo.setImageResource((R.drawable.papel_pedra));
+                ivCampo.setImageResource(R.drawable.papel_pedra);
             } else if(escolhaJogador == 2 && escolhaCPU== 2){
                 contaEmpates++;
-                ivCampo.setImageResource((R.drawable.papel_papel));
+                ivCampo.setImageResource(R.drawable.papel_papel);
             } else if(escolhaJogador == 2 && escolhaCPU== 3){
                 contaDerrotas++;
-                ivCampo.setImageResource((R.drawable.papel_tesoura));
+                ivCampo.setImageResource(R.drawable.papel_tesoura);
             } else if(escolhaJogador == 3 && escolhaCPU== 1){
                 contaDerrotas++;
-                ivCampo.setImageResource((R.drawable.tesoura_pedra));
+                ivCampo.setImageResource(R.drawable.tesoura_pedra);
             } else if(escolhaJogador == 3 && escolhaCPU== 2){
                 contaVitorias++;
-                ivCampo.setImageResource((R.drawable.tesoura_papel));
+                ivCampo.setImageResource(R.drawable.tesoura_papel);
             } else if(escolhaJogador == 3 && escolhaCPU== 3){
                 contaEmpates++;
-                ivCampo.setImageResource((R.drawable.tesoura_tesoura));
+                ivCampo.setImageResource(R.drawable.tesoura_tesoura);
             }
 
             tvPartidas.setText("Total Jogadas: " + contaPartidas);
@@ -100,5 +102,15 @@ public class JogarActivity extends AppCompatActivity {
         }
     }
 
+    public void chamaIntrucoes(View v){
+        Intent tela = new Intent(this, InstrucoesActivity.class);
+        startActivity(tela);
+    }
 
+    public void novaPartida() {
+        contaPartidas = 0;
+        contaEmpates = 0;
+        contaDerrotas = 0;
+        contaVitorias = 0;
+    }
 }

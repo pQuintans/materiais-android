@@ -9,12 +9,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnJogar"
-        android:layout_width="343dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="283dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/fundo2"
+        android:onClick="Escolher"
         android:text="Fazer Jogada!"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,11 +24,11 @@
         android:id="@+id/rgEscolha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="80dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnJogar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/rbPedra"
@@ -52,7 +53,7 @@
         android:id="@+id/ivCampo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -63,11 +64,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="310dp"
         android:text="Partidas: 0"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgEscolha" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvVitorias"
@@ -77,6 +79,7 @@
         android:layout_marginTop="20dp"
         android:text="Vitórias: 0"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPartidas" />
 
@@ -88,6 +91,7 @@
         android:layout_marginTop="20dp"
         android:text="Empates: 0"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvVitorias" />
 
@@ -99,28 +103,32 @@
         android:layout_marginTop="20dp"
         android:text="Derrotas: 0"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmpates" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNova"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/fundo2"
         android:text="NOVA PARTIDA"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDerrotas" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnInstrucoes"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="410dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/fundo2"
+        android:onClick="chamaIntrucoes"
         android:text="instruções"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDerrotas" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

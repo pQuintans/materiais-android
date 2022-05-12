@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JanKenPo3INFD">
         <activity
+            android:name=".InstrucoesActivity"
+            android:exported="false" />
+        <activity
             android:name=".JogarActivity"
             android:exported="false" />
         <activity
