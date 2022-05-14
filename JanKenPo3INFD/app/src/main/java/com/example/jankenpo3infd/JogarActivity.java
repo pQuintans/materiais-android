@@ -33,6 +33,7 @@ public class JogarActivity extends AppCompatActivity {
         tvPartidas = findViewById(R.id.tvPartidas);
         tvVitorias = findViewById(R.id.tvVitorias);
         tvEmpates = findViewById(R.id.tvEmpates);
+        tvDerrotas = findViewById(R.id.tvDerrotas);
         rgEscolha = findViewById(R.id.rgEscolha);
         ivCampo = findViewById(R.id.ivCampo);
 
@@ -54,11 +55,8 @@ public class JogarActivity extends AppCompatActivity {
         } else if(rbTesoura.isChecked()){
             escolhaJogador = 3;
         } else {
-            Toast.makeText(this,
-                    "Escolha pedra, papel ou tesoura",
-                    Toast.LENGTH_SHORT
-                    ).show();
-            return;
+            Toast.makeText(this, "Escolha pedra, papel ou tesoura", Toast.LENGTH_SHORT).show();
+            escolhaJogador = 0;
         }
 
         if(escolhaJogador > 0){
@@ -95,10 +93,7 @@ public class JogarActivity extends AppCompatActivity {
                 ivCampo.setImageResource(R.drawable.tesoura_tesoura);
             }
 
-            tvPartidas.setText("Total Jogadas: " + contaPartidas);
-            tvVitorias.setText("Total Derrotas: " + contaVitorias);
-            tvEmpates.setText("Total Empates: " + contaEmpates);
-            tvDerrotas.setText("Total Derrotas: " + contaDerrotas);
+            atualizarTextos();
         }
     }
 
@@ -107,10 +102,20 @@ public class JogarActivity extends AppCompatActivity {
         startActivity(tela);
     }
 
-    public void novaPartida() {
+    public void novaPartida(View v) {
         contaPartidas = 0;
         contaEmpates = 0;
         contaDerrotas = 0;
         contaVitorias = 0;
+        ivCampo.setImageResource(R.drawable.campo_batalha);
+
+        atualizarTextos();
+    }
+
+    private void atualizarTextos() {
+        tvPartidas.setText("Total Jogadas: " + contaPartidas);
+        tvVitorias.setText("Total Derrotas: " + contaVitorias);
+        tvEmpates.setText("Total Empates: " + contaEmpates);
+        tvDerrotas.setText("Total Derrotas: " + contaDerrotas);
     }
 }

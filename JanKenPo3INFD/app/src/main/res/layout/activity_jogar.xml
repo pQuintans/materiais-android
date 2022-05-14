@@ -114,6 +114,7 @@
         android:layout_marginTop="330dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/fundo2"
+        android:onClick="novaPartida"
         android:text="NOVA PARTIDA"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
