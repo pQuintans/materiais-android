@@ -11,25 +11,29 @@
         android:id="@+id/rgOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="76dp"
         android:layoutDirection="inherit"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/rdbPar"
-            android:layout_width="100dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:drawableRight="@drawable/par_drawable"
             android:text="Par"
             android:textColor="#FEFEFE"
             android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/rdbImpar"
-            android:layout_width="100dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/impar_drawable"
             android:text="ímpar"
             android:textColor="#FEFEFE"
             android:textSize="20sp" />
@@ -40,9 +44,9 @@
         android:id="@+id/TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="136dp"
         android:layout_weight="1"
-        android:text="Digite seu número:"
+        android:text="Digite seu número (1 - 5):"
         android:textColor="#FEFEFE"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,12 +57,14 @@
         android:id="@+id/txtPlayersNumber"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="176dp"
         android:backgroundTint="#FEFEFE"
         android:ems="10"
         android:inputType="number"
+        android:textAlignment="center"
         android:textColor="#FEFEFE"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,14 +72,13 @@
         android:id="@+id/btnMakeMove"
         android:layout_width="200dp"
         android:layout_height="75dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="236dp"
         android:backgroundTint="#8AB4F8"
         android:onClick="play"
         android:text="Fazer Jogada"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,29 +86,19 @@
         android:id="@+id/imagesContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="336dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ivPlayersMove"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+        <TextView
+            android:id="@+id/txtBattlefield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/menuitem_background"
-            tools:layout_editor_absoluteX="200dp"
-            tools:layout_editor_absoluteY="237dp" />
-
-        <ImageView
-            android:id="@+id/ivIAMove"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/menuitem_background"
-            tools:layout_editor_absoluteX="200dp"
-            tools:layout_editor_absoluteY="237dp" />
+            android:textColor="#FEFEFE"
+            android:textSize="100sp" />
 
     </LinearLayout>
 
@@ -111,10 +106,11 @@
         android:id="@+id/lblResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="480dp"
         android:textColor="#FEFEFE"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -17,8 +17,7 @@ public class PlayActivity extends AppCompatActivity {
 
     RadioGroup rgOptions;
     RadioButton rdbPar, rdbImpar;
-    ImageView ivPlayersMove, ivIAMove;
-    TextView txtResult;
+    TextView txtResult, txtBattlefield;
     EditText txtPlayersNumber;
 
     @Override
@@ -29,40 +28,43 @@ public class PlayActivity extends AppCompatActivity {
         rgOptions = findViewById(R.id.rgOptions);
         rdbPar = findViewById(R.id.rdbPar);
         rdbImpar = findViewById(R.id.rdbImpar);
-        ivPlayersMove = findViewById(R.id.ivPlayersMove);
-        ivIAMove = findViewById(R.id.ivIAMove);
+        txtBattlefield = findViewById(R.id.txtBattlefield);
         txtResult = findViewById(R.id.lblResult);
         txtPlayersNumber = findViewById(R.id.txtPlayersNumber);
     }
 
     public void play(View v) {
-        int iaMove = 0, playersMove = 0;
-        Boolean didPlayerWin;
+        int iaNumber, playersMove = 0;
+        Boolean didPlayerWin, shouldPlay = true;
 
         if (rdbImpar.isChecked()){
             playersMove = 1;
-            ivPlayersMove.setImageResource(R.drawable.impar);
         } else if (rdbPar.isChecked()) {
             playersMove = 2;
-            ivPlayersMove.setImageResource(R.drawable.par);
         } else {
-            Toast.makeText(this, "Você deve selecionar uma opção antes de jogar", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Você deve selecionar uma opção antes de jogar", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(txtPlayersNumber.getText().toString().matches("")) {
+            Toast.makeText(this, "Você deve digitar um número antes de jogar", Toast.LENGTH_SHORT).show();
             return;
         }
 
         int playersNumber = Integer.parseInt(txtPlayersNumber.getText().toString());
 
-        if(playersNumber >= 0){
+        if(playersNumber > 5 || playersNumber < 0) {
+            Toast.makeText(this, "Você deve digitar um número entre 0 e 5", Toast.LENGTH_SHORT).show();
+            shouldPlay = false;
+        }
+
+        if(shouldPlay){
             Random randomizer = new  Random();
-            iaMove = randomizer.nextInt(5) + 1;
+            iaNumber = randomizer.nextInt(5) + 1;
 
-            if (iaMove % 2 == 0){
-                ivIAMove.setImageResource(R.drawable.par);
-            } else {
-                ivIAMove.setImageResource(R.drawable.impar);
-            }
+            txtBattlefield.setText(playersNumber + " x " + iaNumber);
 
-            if((playersNumber + iaMove) % 2 == 0){
+            if((playersNumber + iaNumber) % 2 == 0){
                 if(playersMove == 1) {
                     didPlayerWin = false;
                 } else {
@@ -76,7 +78,7 @@ public class PlayActivity extends AppCompatActivity {
                 }
             }
 
-            txtResult.setText("Você");
+            txtResult.setText("Você " + (didPlayerWin ? "ganhou!!" : "perdeu") + " (" + playersNumber + "+" + iaNumber + "=" + (playersNumber+iaNumber) +")");
         } else {
             Toast.makeText(this, "Você deve digitar uma opção antes de jogar", Toast.LENGTH_SHORT);
         }
