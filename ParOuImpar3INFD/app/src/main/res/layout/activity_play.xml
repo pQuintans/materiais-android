@@ -11,7 +11,7 @@
         android:id="@+id/rgOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="40dp"
         android:layoutDirection="inherit"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
         android:id="@+id/TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="110dp"
         android:layout_weight="1"
         android:text="Digite seu número (1 - 5):"
         android:textColor="#FEFEFE"
@@ -57,7 +57,7 @@
         android:id="@+id/txtPlayersNumber"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="150dp"
         android:backgroundTint="#FEFEFE"
         android:ems="10"
         android:inputType="number"
@@ -72,7 +72,7 @@
         android:id="@+id/btnMakeMove"
         android:layout_width="200dp"
         android:layout_height="75dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="200dp"
         android:backgroundTint="#8AB4F8"
         android:onClick="play"
         android:text="Fazer Jogada"
@@ -86,7 +86,7 @@
         android:id="@+id/imagesContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="290dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,11 +94,11 @@
 
         <TextView
             android:id="@+id/txtBattlefield"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#FEFEFE"
-            android:textSize="100sp" />
+            android:textSize="50sp" />
 
     </LinearLayout>
 
@@ -106,11 +106,77 @@
         android:id="@+id/lblResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="370dp"
         android:textColor="#FEFEFE"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblPartidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="450dp"
+        android:text="Partidas"
+        android:textColor="#FEFEFE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblPartidasResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="450dp"
+        android:text="0"
+        android:textColor="#FEFEFE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblVitoriasResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="470dp"
+        android:text="0"
+        android:textColor="#FEFEFE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblDerrotasResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="490dp"
+        android:text="0"
+        android:textColor="#FEFEFE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblVitorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="470dp"
+        android:text="Vitórias"
+        android:textColor="#FEFEFE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblDerrotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="490dp"
+        android:text="Derrotas"
+        android:textColor="#FEFEFE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

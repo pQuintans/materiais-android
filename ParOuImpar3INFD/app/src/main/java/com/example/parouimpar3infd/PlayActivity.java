@@ -17,8 +17,12 @@ public class PlayActivity extends AppCompatActivity {
 
     RadioGroup rgOptions;
     RadioButton rdbPar, rdbImpar;
-    TextView txtResult, txtBattlefield;
+    TextView txtResult, txtBattlefield, lblPartidasResultado, lblVitoriasResultado, lblDerrotasResultado;
     EditText txtPlayersNumber;
+
+    int partidasResultado = 0;
+    int derrotasResultado = 0;
+    int vitoriasResultado = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +35,15 @@ public class PlayActivity extends AppCompatActivity {
         txtBattlefield = findViewById(R.id.txtBattlefield);
         txtResult = findViewById(R.id.lblResult);
         txtPlayersNumber = findViewById(R.id.txtPlayersNumber);
+        lblPartidasResultado = findViewById(R.id.lblPartidasResultado);
+        lblVitoriasResultado = findViewById(R.id.lblVitoriasResultado);
+        lblDerrotasResultado = findViewById(R.id.lblDerrotasResultado);
     }
 
     public void play(View v) {
         int iaNumber, playersMove = 0;
         Boolean didPlayerWin, shouldPlay = true;
+
 
         if (rdbImpar.isChecked()){
             playersMove = 1;
@@ -59,6 +67,9 @@ public class PlayActivity extends AppCompatActivity {
         }
 
         if(shouldPlay){
+            partidasResultado++;
+            lblPartidasResultado.setText(Integer.toString(partidasResultado));
+
             Random randomizer = new  Random();
             iaNumber = randomizer.nextInt(5) + 1;
 
@@ -78,7 +89,16 @@ public class PlayActivity extends AppCompatActivity {
                 }
             }
 
-            txtResult.setText("Você " + (didPlayerWin ? "ganhou!!" : "perdeu") + " (" + playersNumber + "+" + iaNumber + "=" + (playersNumber+iaNumber) +")");
+            if (didPlayerWin == true){
+                txtResult.setText("Você ganhou!! (" + playersNumber + "+" + iaNumber + "=" + (playersNumber+iaNumber) +")");
+                vitoriasResultado++;
+                lblVitoriasResultado.setText(Integer.toString(vitoriasResultado));
+            }
+            else {
+                txtResult.setText("Você perdeu (" + playersNumber + "+" + iaNumber + "=" + (playersNumber+iaNumber) +")");
+                derrotasResultado++;
+                lblDerrotasResultado.setText(Integer.toString(derrotasResultado));
+            }
         } else {
             Toast.makeText(this, "Você deve digitar uma opção antes de jogar", Toast.LENGTH_SHORT);
         }
